@@ -9,7 +9,7 @@ class RatingBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(2),
+      padding: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         border: Border.all(color: ThemeColors.kStar),
         borderRadius: BorderRadius.circular(6),
@@ -20,7 +20,9 @@ class RatingBadge extends StatelessWidget {
           const SizedBox(width: 2),
           Text(
             rating.toString(),
-            style: ThemeTypography.sub1.copyWith(fontWeight: FontWeight.w500),
+            style: ThemeTypography.sub1.copyWith(
+                fontWeight: FontWeight.w500,
+            ),
           ),
         ],
       ),

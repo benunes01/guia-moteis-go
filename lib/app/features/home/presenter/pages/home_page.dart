@@ -6,23 +6,36 @@ import 'package:teste/app/features/home/presenter/components/motel_card.dart';
 import 'package:teste/app/features/home/presenter/states/motel_state.dart';
 import 'package:teste/app/features/home/presenter/stores/motel_store.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final MotelStore store = Modular.get<MotelStore>();
+
+  @override
+  void initState() {
+    super.initState();
+    store.getAllMotels(); // Chamando a requisição na inicialização correta
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final MotelStore store = Modular.get<MotelStore>();
+    final height = MediaQuery.of(context).size.height;
 
     return Scaffold(
       backgroundColor: ThemeColors.kPrimary,
       body: Stack(
         children: [
           Positioned(
-            top: MediaQuery.of(context).size.height * 0.18,
+            top: height * 0.18,
             left: 0,
             right: 0,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.82,
+              height: height * 0.82,
               decoration: BoxDecoration(
                 color: ThemeColors.kSecondary,
                 borderRadius: const BorderRadius.only(
@@ -31,39 +44,45 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               child: BlocBuilder<MotelStore, MotelState>(
-                bloc: store..getAllMotels(),
-                builder: (context, state) {
-                  if (state is MotelLoadInProgress) {
-                    return const Center(child: CircularProgressIndicator());
-                  }
-                  if (state is MotelLoadFailure) {
-                    return const Center(
-                      child: Text(
-                        'Erro ao carregar motéis',
-                        style: TextStyle(color: Colors.red, fontSize: 18),
-                      ),
-                    );
-                  }
-                  if (state is MotelLoadSuccess) {
-                    return SingleChildScrollView(
-                      child: Column(
-                        children: List.generate(
-                          state.response.data.moteis.length,
-                              (index) {
-                            final motel = state.response.data.moteis[index];
-                            return MotelCard(motel: motel);
-                          },
-                        ),
-                      ),
-                    );
-                  }
-                  return const Center(child: Text('Nenhum dado disponível'));
-                },
+                bloc: store,
+                builder: (context, state) => _buildMotelsList(state),
               ),
             ),
           ),
         ],
       ),
     );
+  }
+
+  Widget _buildMotelsList(MotelState state) {
+    if (state is MotelLoadInProgress) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    if (state is MotelLoadFailure) {
+      return const Center(
+        child: Text(
+          'Erro ao carregar motéis',
+          style: TextStyle(color: Colors.red, fontSize: 18),
+        ),
+      );
+    }
+
+    if (state is MotelLoadSuccess) {
+      final moteis = state.response.data.moteis;
+      if (moteis.isEmpty) {
+        return const Center(child: Text('Nenhum motel encontrado'));
+      }
+
+      return ListView.builder(
+        padding: const EdgeInsets.only(top: 16),
+        itemCount: moteis.length,
+        itemBuilder: (context, index) {
+          return MotelCard(motel: moteis[index]);
+        },
+      );
+    }
+
+    return const Center(child: Text('Nenhum dado disponível'));
   }
 }

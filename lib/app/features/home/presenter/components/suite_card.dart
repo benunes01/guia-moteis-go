@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:teste/app/core/theme/theme_colors.dart';
 import 'package:teste/app/core/theme/theme_typography.dart';
 import 'package:teste/app/core/utils/format_string.dart';
+import 'package:teste/app/features/home/infra/models/item_model.dart';
 import 'package:teste/app/features/home/infra/models/suite_model.dart';
+import 'package:teste/app/features/home/presenter/components/bottom_sheet/suite_items_bottom_sheet.dart';
 import 'package:teste/app/features/home/presenter/components/periodo_card.dart';
-import 'package:teste/app/features/home/presenter/components/suite_itens.dart';
+import 'package:teste/app/features/home/presenter/components/suite_items.dart';
 
 class SuiteCard extends StatelessWidget {
   final SuiteModel suite;
@@ -47,19 +49,21 @@ class SuiteCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 6,),
-          SuiteItens(
-            itens: suite.itens.map((e) => e.nome).toList(),
+          SuiteItems(
+            items: suite.itens.map((e) => e.nome).toList(),
             onViewAll: () {
+              print('dasdasdas');
+              showFullScreenBottomSheet(context, suite.itens);
             },
           ),
           Column(
             children: List.generate(suite.periodos.length, (index) {
-              final periodo = suite.periodos[index];
+              final period = suite.periodos[index];
 
               return Padding(
                 padding: EdgeInsets.only(top: 6.0),
                 child: PeriodCard(
-                  periodo: periodo,
+                  periodo: period,
                 ),
               );
             }),
@@ -67,6 +71,15 @@ class SuiteCard extends StatelessWidget {
 
         ],
       ),
+    );
+  }
+
+  void showFullScreenBottomSheet(BuildContext context, List<ItemModel> items) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      builder: (context) => SuiteItemsBottomSheet(suite: suite),
     );
   }
 }

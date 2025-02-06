@@ -28,6 +28,12 @@ class ThemeTypography {
       color: ThemeColors.kTextBase
   );
 
+  static TextStyle get sub2 => TextStyle(
+      fontSize: 10.0,
+      fontWeight: FontWeight.w400,
+      color: ThemeColors.kTextBase
+  );
+
   static TextStyle get body1 => TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,

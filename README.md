@@ -1,17 +1,41 @@
-# teste
+# Projeto Flutter
 
-A new Flutter project.
+Listagem de base de dados (moteis)
 
-## Getting Started
+A arquitetura utilizada no projeto segue uma versão simplificada do Clean Architecture, incorporando princípios do SOLID e usando o Modular para injeção de dependências. A intenção é demonstrar boas práticas e organização de código, mantendo a simplicidade.
 
-This project is a starting point for a Flutter application.
+Foi utilizado um mecanismo de fallback para retentar a busca com uma segunda url.
 
-A few resources to get you started if this is your first Flutter project:
+### Testes unitarios
+```sh
+flutter test
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Versões Utilizadas
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# guia-moteis-test
+- **Flutter:** 3.27.3 (channel stable)
+- **Dart:** 3.6.1
+
+## Packages
+flutter_modular
+
+result_dart
+
+flutter_bloc
+
+http
+
+equatable
+
+shimmer
+
+## Gerenciamento de Estado
+
+Para o gerenciamento de estado, foi utilizado o **Bloc**.
+
+## Rodar o projeto
+
+```sh
+flutter pub get
+
+flutter run

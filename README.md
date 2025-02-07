@@ -6,6 +6,8 @@ A arquitetura utilizada no projeto segue uma versão simplificada do Clean Archi
 
 Foi utilizado um mecanismo de fallback para retentar a busca com uma segunda url.
 
+https://github.com/user-attachments/assets/df7ec0c6-952f-40f6-8847-46937acd2975
+
 ### Testes unitarios
 ```sh
 flutter test

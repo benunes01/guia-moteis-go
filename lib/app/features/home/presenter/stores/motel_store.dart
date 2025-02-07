@@ -11,7 +11,6 @@ class MotelStore extends Cubit<MotelState> {
     emit(MotelLoadInProgress());
 
     final result = await _getAllUseCase.call(null);
-
     result.fold(
           (success) => emit(MotelLoadSuccess(success)),
           (failure) => emit(MotelLoadFailure('Erro ao buscar motéis')),

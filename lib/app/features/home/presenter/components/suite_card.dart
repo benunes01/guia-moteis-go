@@ -5,7 +5,7 @@ import 'package:teste/app/core/utils/format_string.dart';
 import 'package:teste/app/features/home/infra/models/item_model.dart';
 import 'package:teste/app/features/home/infra/models/suite_model.dart';
 import 'package:teste/app/features/home/presenter/components/bottom_sheet/suite_items_bottom_sheet.dart';
-import 'package:teste/app/features/home/presenter/components/periodo_card.dart';
+import 'package:teste/app/features/home/presenter/components/period_card.dart';
 import 'package:teste/app/features/home/presenter/components/suite_items.dart';
 
 class SuiteCard extends StatelessWidget {
@@ -50,9 +50,8 @@ class SuiteCard extends StatelessWidget {
           ),
           const SizedBox(height: 6,),
           SuiteItems(
-            items: suite.itens.map((e) => e.nome).toList(),
+            items: suite.categoriaItens,
             onViewAll: () {
-              print('dasdasdas');
               showFullScreenBottomSheet(context, suite.itens);
             },
           ),

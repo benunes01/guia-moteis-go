@@ -14,6 +14,7 @@ class MotelService implements IMotelService {
     try {
       final response = await _apiClient.get('');
       final jsonData = jsonDecode(response.body);
+      print(jsonData);
       return GetAllResponse.fromJson(jsonData);
     } catch (e) {
       throw ApiException(-1, 'Erro ao buscar lista de motéis: $e');

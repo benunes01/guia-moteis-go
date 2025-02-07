@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:teste/app/core/components/custom_shimmer.dart';
 import 'package:teste/app/core/theme/theme_colors.dart';
 import 'package:teste/app/features/home/presenter/components/motel_card.dart';
 import 'package:teste/app/features/home/presenter/states/motel_state.dart';
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    store.getAllMotels(); // Chamando a requisição na inicialização correta
+    store.getAllMotels();
   }
 
   @override
@@ -56,7 +57,13 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildMotelsList(MotelState state) {
     if (state is MotelLoadInProgress) {
-      return const Center(child: CircularProgressIndicator());
+      return const Column(
+        children: [
+          CustomShimmer(
+            height: 100,
+          )
+        ],
+      );
     }
 
     if (state is MotelLoadFailure) {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:teste/app/core/theme/theme_colors.dart';
-import 'package:teste/app/core/utils/suite_item_icon.dart';
+import 'package:teste/app/features/home/infra/models/category_item_model.dart';
 
 class SuiteItems extends StatelessWidget {
-  final List<String> items;
+  final List<CategoryItemModel> items;
   final VoidCallback onViewAll;
 
   const SuiteItems({
@@ -36,21 +36,20 @@ class SuiteItems extends StatelessWidget {
                   color: ThemeColors.kBase,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(getItemIcon(item), size: 28, color: ThemeColors.kGrey),
+                child: Image.network(item.icone),
               ),
             )),
-            if (items.length > 4)
-              Row(
-                children: [
-                  Text(
-                    "Ver\ntodos",
-                    style: const TextStyle(fontSize: 12),
-                    textAlign: TextAlign.end,
-                  ),
-                  const SizedBox(width: 4),
-                  const Icon(Icons.keyboard_arrow_down_outlined, size: 18, color: Colors.grey),
-                ],
-              ),
+            Row(
+              children: [
+                Text(
+                  "Ver\ntodos",
+                  style: const TextStyle(fontSize: 12),
+                  textAlign: TextAlign.end,
+                ),
+                const SizedBox(width: 4),
+                const Icon(Icons.keyboard_arrow_down_outlined, size: 18, color: Colors.grey),
+              ],
+            ),
           ],
         ),
       ),

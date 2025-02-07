@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:teste/app/core/theme/theme_colors.dart';
 import 'package:teste/app/core/theme/theme_typography.dart';
 import 'package:teste/app/core/utils/format_string.dart';
-import 'package:teste/app/features/home/infra/models/periodo_model.dart';
+import 'package:teste/app/features/home/infra/models/period_model.dart';
 
 class PeriodCard extends StatelessWidget {
-  final PeriodoModel periodo;
+  final PeriodModel periodo;
 
   const PeriodCard({
     super.key,

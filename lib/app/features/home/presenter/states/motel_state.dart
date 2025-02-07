@@ -1,4 +1,3 @@
-// coverage:ignore-file
 import 'package:equatable/equatable.dart';
 import 'package:teste/app/features/home/infra/models/response/get_all_response.dart';
 

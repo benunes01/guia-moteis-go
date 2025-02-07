@@ -1,5 +1,6 @@
+import 'package:teste/app/features/home/infra/models/category_item_model.dart';
 import 'package:teste/app/features/home/infra/models/item_model.dart';
-import 'package:teste/app/features/home/infra/models/periodo_model.dart';
+import 'package:teste/app/features/home/infra/models/period_model.dart';
 
 class SuiteModel {
   final String nome;
@@ -7,8 +8,8 @@ class SuiteModel {
   final bool exibirQtdDisponiveis;
   final List<String> fotos;
   final List<ItemModel> itens;
-  final List<CategoriaItemModel> categoriaItens;
-  final List<PeriodoModel> periodos;
+  final List<CategoryItemModel> categoriaItens;
+  final List<PeriodModel> periodos;
 
   SuiteModel({
     required this.nome,
@@ -31,11 +32,11 @@ class SuiteModel {
           .toList() ??
           [],
       categoriaItens: (json["categoriaItens"] as List<dynamic>?)
-          ?.map((e) => CategoriaItemModel.fromJson(e))
+          ?.map((e) => CategoryItemModel.fromJson(e))
           .toList() ??
           [],
       periodos: (json["periodos"] as List<dynamic>?)
-          ?.map((e) => PeriodoModel.fromJson(e))
+          ?.map((e) => PeriodModel.fromJson(e))
           .toList() ??
           [],
     );

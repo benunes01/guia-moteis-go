@@ -5,10 +5,10 @@ class CircularImage extends StatelessWidget {
   final double size;
 
   const CircularImage({
-    Key? key,
+    super.key,
     required this.imageUrl,
     this.size = 40,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -8,4 +8,12 @@ class DiscountModel {
       desconto: (json["desconto"] ?? 0).toDouble(),
     );
   }
+
+  factory DiscountModel.mocked({
+    double? desconto,
+  }) {
+    return DiscountModel(
+      desconto: desconto ?? 10.0,
+    );
+  }
 }

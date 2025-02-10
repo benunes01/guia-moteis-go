@@ -41,4 +41,27 @@ class SuiteModel {
           [],
     );
   }
+
+  factory SuiteModel.mocked({
+    String? nome,
+    int? qtd,
+    bool? exibirQtdDisponiveis,
+    List<String>? fotos,
+    List<ItemModel>? itens,
+    List<CategoryItemModel>? categoriaItens,
+    List<PeriodModel>? periodos,
+  }) {
+    return SuiteModel(
+      nome: nome ?? 'Suite Exemplo',
+      qtd: qtd ?? 1,
+      exibirQtdDisponiveis: exibirQtdDisponiveis ?? true,
+      fotos: fotos ?? [
+        'https://example.com/foto1.jpg',
+        'https://example.com/foto2.jpg'
+      ],
+      itens: itens ?? [ItemModel.mocked()],
+      categoriaItens: categoriaItens ?? [CategoryItemModel.mocked()],
+      periodos: periodos ?? [PeriodModel.mocked()],
+    );
+  }
 }

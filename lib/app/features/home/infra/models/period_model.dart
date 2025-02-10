@@ -24,7 +24,27 @@ class PeriodModel {
       valor: (json["valor"] ?? 0).toDouble(),
       valorTotal: (json["valorTotal"] ?? 0).toDouble(),
       temCortesia: json["temCortesia"] ?? false,
-      desconto: json["desconto"] != null ? DiscountModel.fromJson(json["desconto"]) : null,
+      desconto: json["desconto"] != null
+          ? DiscountModel.fromJson(json["desconto"])
+          : null,
+    );
+  }
+
+  factory PeriodModel.mocked({
+    String? tempoFormatado,
+    String? tempo,
+    double? valor,
+    double? valorTotal,
+    bool? temCortesia,
+    DiscountModel? desconto,
+  }) {
+    return PeriodModel(
+      tempoFormatado: tempoFormatado ?? '00:00',
+      tempo: tempo ?? '0h',
+      valor: valor ?? 0.0,
+      valorTotal: valorTotal ?? 0.0,
+      temCortesia: temCortesia ?? false,
+      desconto: desconto ?? DiscountModel.mocked(),
     );
   }
 }

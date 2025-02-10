@@ -10,4 +10,14 @@ class CategoryItemModel {
       icone: json["icone"] ?? "",
     );
   }
+
+  factory CategoryItemModel.mocked({
+    String? nome,
+    String? icone,
+  }) {
+    return CategoryItemModel(
+      nome: nome ?? 'Categoria Exemplo',
+      icone: icone ?? 'icone_exemplo.png',
+    );
+  }
 }

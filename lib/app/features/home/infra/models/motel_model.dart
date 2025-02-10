@@ -36,4 +36,26 @@ class MotelModel {
       media: (json["media"] ?? 0).toDouble(),
     );
   }
+
+  factory MotelModel.mocked({
+    String? fantasia,
+    String? logo,
+    String? bairro,
+    double? distancia,
+    int? qtdFavoritos,
+    List<SuiteModel>? suites,
+    int? qtdAvaliacoes,
+    double? media,
+  }) {
+    return MotelModel(
+      fantasia: fantasia ?? 'Motel Exemplo',
+      logo: logo ?? 'https://example.com/logo.png',
+      bairro: bairro ?? 'Bairro Exemplo',
+      distancia: distancia ?? 1.0,
+      qtdFavoritos: qtdFavoritos ?? 10,
+      suites: suites ?? [SuiteModel.mocked()],
+      qtdAvaliacoes: qtdAvaliacoes ?? 5,
+      media: media ?? 4.5,
+    );
+  }
 }

@@ -8,4 +8,12 @@ class ItemModel {
       nome: json["nome"] ?? "",
     );
   }
+
+  factory ItemModel.mocked({
+    String? nome,
+  }) {
+    return ItemModel(
+      nome: nome ?? 'Item Exemplo',
+    );
+  }
 }

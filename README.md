@@ -2,9 +2,13 @@
 
 Listagem de base de dados (moteis)
 
-A arquitetura utilizada no projeto segue uma versão simplificada do Clean Architecture, incorporando princípios do SOLID e usando o Modular para injeção de dependências. A intenção é demonstrar boas práticas e organização de código, mantendo a simplicidade.
+A arquitetura utilizada no projeto segue uma versão simplificada do Clean Architecture, incorporando princípios do **SOLID** e usando o Modular para injeção de dependências. A intenção é demonstrar boas práticas e organização de código, mantendo a simplicidade.
 
-**Foi utilizado um mecanismo de fallback para retentar a busca com uma segunda url.**
+Listagem de motéis seguindo o design do aplicativo existente.
+Consumo de duas APIs externas:
+**Foi utilizado um mecanismo de fallback para retentar a busca com a segunda url.**
+Tratamento de erros.
+Criação de ThemeColors e ThemeTypography para reutilizar constantes de style e color.
 
 https://github.com/user-attachments/assets/df7ec0c6-952f-40f6-8847-46937acd2975
 

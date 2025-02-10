@@ -47,7 +47,7 @@ class SuiteItems extends StatelessWidget {
                   textAlign: TextAlign.end,
                 ),
                 const SizedBox(width: 4),
-                const Icon(Icons.keyboard_arrow_down_outlined, size: 18, color: Colors.grey),
+                const Icon(Icons.keyboard_arrow_down_outlined, size: 18, color: ThemeColors.kGrey),
               ],
             ),
           ],

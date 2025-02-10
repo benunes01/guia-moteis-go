@@ -77,7 +77,7 @@ class SuiteCard extends StatelessWidget {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.transparent,
+      backgroundColor: ThemeColors.kTransparent,
       builder: (context) => SuiteItemsBottomSheet(suite: suite),
     );
   }

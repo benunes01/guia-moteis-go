@@ -20,5 +20,7 @@ class ThemeColors {
   //Others
   static const Color kStar = Color(0xFFEFA402);
   static const Color kSuccess = Color(0xFF1FA80B);
+  static const Color kFailure = Color(0xFFFF0711);
+  static const Color kTransparent = Colors.transparent;
 
 }

@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
       return const Center(
         child: Text(
           'Erro ao carregar motéis',
-          style: TextStyle(color: Colors.red, fontSize: 18),
+          style: TextStyle(color: ThemeColors.kFailure, fontSize: 18),
         ),
       );
     }

@@ -20,7 +20,7 @@ class SuiteItemsBottomSheet extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.symmetric(vertical: 36, horizontal: 16),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: ThemeColors.kAccent,
             borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
           ),
           child: Column(

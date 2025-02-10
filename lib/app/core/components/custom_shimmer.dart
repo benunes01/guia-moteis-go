@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:teste/app/core/theme/theme_colors.dart';
 
 class CustomShimmer extends StatelessWidget {
   final double height;
@@ -11,8 +12,8 @@ class CustomShimmer extends StatelessWidget {
     super.key,
     required this.height,
     this.width = double.infinity,
-    this.baseColor = Colors.grey,
-    this.highlightColor = Colors.white,
+    this.baseColor = ThemeColors.kGrey,
+    this.highlightColor = ThemeColors.kAccent,
   });
 
   @override

@@ -12,6 +12,7 @@ https://github.com/user-attachments/assets/df7ec0c6-952f-40f6-8847-46937acd2975
 ```sh
 flutter test
 ```
+Foi criado uma função 'mocked' para cada model, facilitando o teste unitário!
 
 ## Versões Utilizadas
 

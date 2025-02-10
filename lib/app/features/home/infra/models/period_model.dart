@@ -1,4 +1,4 @@
-import 'package:teste/app/features/home/infra/models/discount.dart';
+import 'package:teste/app/features/home/infra/models/discount_model.dart';
 
 class PeriodModel {
   final String tempoFormatado;

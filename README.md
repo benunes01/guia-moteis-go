@@ -8,11 +8,16 @@ Foi utilizado um mecanismo de fallback para retentar a busca com uma segunda url
 
 https://github.com/user-attachments/assets/df7ec0c6-952f-40f6-8847-46937acd2975
 
-### Testes unitarios
+### Testes unitarios com lcov
+
+Criei um makefile para que possa usar o coverage do lcov e verificar a cobertura de teste
 ```sh
-flutter test
+make run_coverage
 ```
-Foi criado uma função 'mocked' para cada model, facilitando o teste unitário!
+
+![Captura de Tela 2025-02-10 às 00 45 25](https://github.com/user-attachments/assets/9fc44cfb-2709-4afa-9b97-c5e6838725fe)
+
+Foi criado uma função 'mocked' para cada model, facilitando o reaproveitamento para os testes unitários!
 
 ## Versões Utilizadas
 
@@ -31,6 +36,8 @@ http
 equatable
 
 shimmer
+
+mockito
 
 ## Gerenciamento de Estado
 

@@ -4,18 +4,18 @@ Listagem de base de dados (moteis)
 
 A arquitetura utilizada no projeto segue uma versão simplificada do Clean Architecture, incorporando princípios do **SOLID** e usando o Modular para injeção de dependências. A intenção é demonstrar boas práticas e organização de código, mantendo a simplicidade.
 
-- Listagem de motéis seguindo o design do aplicativo existente.
+Listagem de motéis seguindo o design do aplicativo existente.
 <br>
-- Consumo de duas APIs externas:
-**Foi utilizado um mecanismo de fallback para retentar a busca com a segunda url.**
+Consumo de duas APIs externas (**Foi utilizado um mecanismo de fallback para retentar a busca com a segunda url**)
 <br>
-- Tratamento de erros.
+Tratamento de erros.
 <br>
-- Criação de ThemeColors e ThemeTypography para reutilizar constantes de style e color.
+Criação de ThemeColors e ThemeTypography para reutilizar constantes de style e color.
 
 https://github.com/user-attachments/assets/df7ec0c6-952f-40f6-8847-46937acd2975
 
-### Testes unitarios com lcov
+
+## Testes unitarios com mockito e com lcov para demonstrar a cobertura
 
 Criei um makefile para que possa usar o coverage do lcov e verificar a cobertura de teste
 ```sh
@@ -25,6 +25,38 @@ make run_coverage
 ![Captura de Tela 2025-02-10 às 00 45 25](https://github.com/user-attachments/assets/9fc44cfb-2709-4afa-9b97-c5e6838725fe)
 
 Foi criado uma função 'mocked' para cada model, facilitando o reaproveitamento para os testes unitários!
+
+
+## Estrutura de Pastas</h2>
+
+<ul>
+  <li>app
+    <ul>
+      <li>core
+        <ul>
+          <li>config/</li>
+          <li>components/</li>
+          <li>theme/</li>
+          <li>utils/</li>
+        </ul>
+      </li>
+      <li>features
+        <ul>
+          <li>home
+            <ul>
+              <li>domain/</li>
+              <li>infra/</li>
+              <li>external/</li>
+              <li>presenter/</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
 
 ## Versões Utilizadas
 
